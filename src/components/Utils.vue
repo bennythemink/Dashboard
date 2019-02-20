@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2>Utils</h2>
-        <Utilisation />
+        <StaffUtilisation />
         <Invoices />
         <Happiness />
     </div>
@@ -11,14 +11,14 @@
 
 import Happiness from '@/components/Happiness.vue'
 import Invoices from '@/components/Invoices.vue'
-import Utilisation from '@/components/Utilisation.vue'
+import StaffUtilisation from '@/components/StaffUtilisation.vue'
 
 export default {
   name: 'utils',
   components: {
     Happiness,
     Invoices,
-    Utilisation
+    StaffUtilisation
   },
   data: {
 
