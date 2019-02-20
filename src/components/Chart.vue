@@ -1,8 +1,8 @@
 <template>
-    
+    <!-- displays a progress chart horizontally -->
     <div class="bar_chart">
         <div class="bar_bg background_grey"></div>
-        <div class="bar_fill" v-bind:class="determineBackgroundColour" :style="{ width: percent + '%' }"></div>
+        <div class="bar_fill" :class="determineBackgroundColour" :style="{ width: percent + '%' }"></div>
     </div>
         
 </template>
@@ -11,7 +11,10 @@
 export default {
 
     props: {
-        percent: Number
+        percent: {
+            type: Number,
+            required: true
+        }
     },
     computed: {
         determineBackgroundColour: function () {

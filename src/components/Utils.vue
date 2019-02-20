@@ -19,8 +19,10 @@ export default {
     Invoices,
     StaffUtilisation
   },
-  data: {
-
+  data: () => {
+      return {
+          
+      }
   }
 }
 </script>

@@ -14,11 +14,13 @@ export default {
   components: {
     Panel
   },
-  data: {
-      projects: [
-          "Paspaley",
-          "Samsung"
-      ]
+  data: () => {
+      return {
+          projects: [
+            "Paspaley",
+            "Samsung"
+        ]
+      }
   }
 }
 </script>

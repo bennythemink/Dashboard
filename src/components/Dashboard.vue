@@ -16,8 +16,10 @@ export default {
     ProjectList,
     Utils
   },
-  data: {
-
+  data: () => {
+      return {
+          
+      }
   }
 }
 </script>
