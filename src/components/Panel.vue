@@ -15,10 +15,13 @@
                 <div class="top_title">
                     <span class="title bold color_blue">50</span><span class="sub_title">Used</span>
                 </div>
-                <div class="bar_chart">
+
+                <Chart percent="80" />    
+
+                <!-- <div class="bar_chart">
                     <div class="bar_bg background_grey"></div>
                     <div class="bar_fill background_blue" style="width:25%"></div>
-                </div>
+                </div> -->
                 <div class="bottom_title">
                     <span class="title bold">200</span><span class="sub_title">Alocated</span>
                 </div>
@@ -75,7 +78,14 @@
 </template>
 
 <script>
+
+import Chart from '@/components/Chart.vue'
+
 export default {
+
+components: {
+    Chart
+}
 
 }
 </script>

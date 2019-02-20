@@ -1,5 +1,6 @@
 <template>
     <div id="left_side" class="scroll">
+        
         <Panel />
     </div>
 </template>
@@ -14,7 +15,10 @@ export default {
     Panel
   },
   data: {
-
+      projects: [
+          "Paspaley",
+          "Samsung"
+      ]
   }
 }
 </script>
