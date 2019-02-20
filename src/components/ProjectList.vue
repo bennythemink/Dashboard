@@ -1,10 +1,21 @@
 <template>
-    
+    <div id="left_side" class="scroll">
+        <Panel />
+    </div>
 </template>
 
 <script>
-export default {
 
+import Panel from '@/components/Panel.vue'
+
+export default {
+  name: 'projectlist',
+  components: {
+    Panel
+  },
+  data: {
+
+  }
 }
 </script>
 

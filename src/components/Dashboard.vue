@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Dashboard</h1>
+        <ProjectList />
         <Utils />
     </div>
 </template>
@@ -8,10 +8,12 @@
 <script>
 
 import Utils from '@/components/Utils.vue'
+import ProjectList from '@/components/ProjectList.vue'
 
 export default {
   name: 'dashboard',
   components: {
+    ProjectList,
     Utils
   },
   data: {
@@ -335,6 +337,7 @@ td{
     flex: 0 0 20%;
     max-width: calc(20% - 20px);
     height: 334px;
+    min-width: 200px;
 }
 #right_side{
     position: absolute;

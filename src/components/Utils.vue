@@ -1,6 +1,5 @@
 <template>
-    <div>
-        <h2>Utils</h2>
+    <div id="right_side">
         <StaffUtilisation />
         <Invoices />
         <Happiness />
