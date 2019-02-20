@@ -1,6 +1,7 @@
 <template>
     <div>
         <h2>Utils</h2>
+        <Invoices />
         <Happiness />
     </div>
 </template>

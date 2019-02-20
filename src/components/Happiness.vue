@@ -122,6 +122,24 @@ export default {
     font-style: normal;
 }
 
+/*** Staff Happiness ***/
+#staff_happiness th:not(:first-of-type),
+#staff_happiness td:not(:first-of-type){
+    text-align: center;
+}
+#staff_happiness td:nth-of-type(2) i{
+    opacity: 0.5;
+}
+#staff_happiness td{
+    height: 0;
+    padding: 10px 15px;
+    
+}
+
+#staff_happiness i{
+    font-size: 14px;
+}
+
 /*** Header ***/
 header{
     display: flex;
