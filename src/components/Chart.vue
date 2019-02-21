@@ -15,7 +15,7 @@ export default {
             type: Number,
             required: true
         },
-        flipped: {
+        usePinkColour: {
             type: Boolean,
             required: false,
             default: false
@@ -23,29 +23,7 @@ export default {
     },
     computed: {
         determineBackgroundColour: function () {
-
-            if (this.flipped == false) { // the lower the percentage the better the result!
-                if (this.percent < 50) {
-                    return "background_blue"
-                } 
-                else if (this.percent < 75) {
-                    return "background_amber"
-                }
-                else {
-                    return "background_red"
-                }
-            } else { // the higher the percentage the better the result!
-                if (this.percent < 50) {
-                    return "background_red"
-                } 
-                else if (this.percent < 75) {
-                    return "background_amber"
-                }
-                else {
-                    return "background_blue"
-                }
-            }
-
+            return (this.usePinkColour) ? "background_pink" : "background_blue"
         }
     }
 }
