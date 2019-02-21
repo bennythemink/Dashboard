@@ -26,7 +26,9 @@ export default new Vuex.Store({
     projects: state => state.projects
   },
   mutations: {
-
+    updateProjects(state,updatedProjects) {
+      state.projects = updatedProjects
+    }
   },
   actions: {
 
