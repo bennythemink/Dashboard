@@ -17,6 +17,10 @@ new Vue({
     api.getProjects().then((data) => {
       this.$store.commit('updateProjects',data)
     })
+
+    api.getStaffUtilisation().then((data) => {
+      this.$store.commit('updateStaffUtilisation',data)
+    })
     
 
   }

@@ -8,6 +8,9 @@
             </header>
             <section>
                 <div class="scroll" style="max-height: 250px">
+
+                    
+
                     <div class="chart">
                         <div class="top_title">
                             <span class="title user">All Staff</span><span class="sub_title bold percentage color_pink">90%</span>
