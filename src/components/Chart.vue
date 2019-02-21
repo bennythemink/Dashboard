@@ -14,19 +14,38 @@ export default {
         percent: {
             type: Number,
             required: true
+        },
+        flipped: {
+            type: Boolean,
+            required: false,
+            default: false
         }
     },
     computed: {
         determineBackgroundColour: function () {
-            if (this.percent < 50) {
-                return "background_blue"
-            } 
-            else if (this.percent < 75) {
-                return "background_amber"
+
+            if (this.flipped == false) { // the lower the percentage the better the result!
+                if (this.percent < 50) {
+                    return "background_blue"
+                } 
+                else if (this.percent < 75) {
+                    return "background_amber"
+                }
+                else {
+                    return "background_red"
+                }
+            } else { // the higher the percentage the better the result!
+                if (this.percent < 50) {
+                    return "background_red"
+                } 
+                else if (this.percent < 75) {
+                    return "background_amber"
+                }
+                else {
+                    return "background_blue"
+                }
             }
-            else {
-                return "background_red"
-            }
+
         }
     }
 }
