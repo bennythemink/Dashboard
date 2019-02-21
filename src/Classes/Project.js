@@ -1,11 +1,9 @@
 
 class Project {
-
-    #client = "";
-    #name = "";
-
+    
     constructor() {
-
+        this.client = ""
+        this.name = ""
     }
 
     percentageComplete() {

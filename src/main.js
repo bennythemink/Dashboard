@@ -15,7 +15,6 @@ new Vue({
 
     const api = new API()
     api.getProjects().then((data) => {
-      console.log("data is "+data)
       this.$store.commit('updateProjects',data)
     })
     

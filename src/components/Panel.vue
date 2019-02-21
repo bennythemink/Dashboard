@@ -17,7 +17,7 @@
                 </div>
 
                 <!-- Custom Chart component -->
-                <Chart :percent=80 />    
+                <Chart :percent="percentageComplete" />    
 
                 <div class="bottom_title">
                     <span class="title bold">{{ project.hoursAllocated }}</span><span class="sub_title">Alocated</span>
@@ -91,13 +91,17 @@ export default {
 components: {
     Chart
 },
+computed: {
+    percentageComplete () {
+        return (this.project.hoursUsed / this.project.hoursAllocated) * 100
+    }
+},
 props: {
-        project: {
-            type: Object,
-            required: true
-        }
-    },
-
+    project: {
+        type: Object,
+        required: true
+    }
+},
 }
 </script>
 
