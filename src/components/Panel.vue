@@ -28,7 +28,7 @@
                     <span class="light">Billable:</span>
                 </div>
                 <div class="form_value">
-                    <span>8 Hours</span>
+                    <span>{{ project.billableHours }} Hours</span>
                 </div>
             </div>
             <div class="form_group">
@@ -36,7 +36,7 @@
                             <span class="light">Project Type:</span>
                         </div>
                         <div class="form_value">
-                            <span class="icon app">App</span>
+                            <span class="icon" :class="determineProjectType">{{ determineProjectType }}</span>
                         </div>
                     </div>
             <div class="form_group">
@@ -54,7 +54,7 @@
                     <span class="light">Project Status:</span>
                 </div>
                 <div class="form_value">
-                    <span class="icon design">Design</span>
+                    <span class="icon" :class="determineProjectStageIcon">{{ determineProjectStage }}</span>
                     <i class="fas fa-angle-down"></i>
                     <select class="form_control" id="project_status">
                         <option value="0" selected>Design</option>
@@ -130,7 +130,49 @@ computed: {
             default:
                 return "N/A"
         }
-    }
+    },
+    determineProjectType () {
+        switch (this.project.projectType) {
+            case 0:
+                return "app"
+            case 1:
+                return "website"
+            default:
+                return "app"
+        }
+    },
+    determineProjectStage () {
+        switch (this.project.projectStage) {
+            case 0:
+                return "Design"
+            case 1:
+                return "Dev"
+            case 2:
+                return "Beta"
+            case 3:
+                return "UAT"
+            case 4:
+                return "Warranty"
+            default:
+                return "N/A"
+        }
+    },
+    determineProjectStageIcon () {
+        switch (this.project.projectStage) {
+            case 0:
+                return "design"
+            case 1:
+                return "dev"
+            case 2:
+                return "beta"
+            case 3:
+                return "UAT"
+            case 4:
+                return "warranty"
+            default:
+                return "design"
+        }
+    },
 },
 props: {
     project: {

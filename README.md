@@ -31,15 +31,18 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### JSON 
 
-Current valid JSON is below. It can be found at http://www.mocky.io/v2/5c6e61973400000d00892bd7. Use https://jsonlint.com to validate changes.
+Current valid JSON is below. It can be found at http://www.mocky.io/v2/5c6e68903400004f00892c1c. Use https://jsonlint.com to validate changes.
 
 [{
-		"code": 1,
+    	"code": 1,
 		"client": "Apple",
 		"name": "Watch App",
 		"hoursAllocated": 100,
 		"hoursUsed": 90,
-		"onTrack": 3
+		"onTrack": 3,
+		"billableHours": 90,
+		"projectType": 0,
+		"projectStage": 0
 	},
 	{
 		"code": 2,
@@ -47,7 +50,10 @@ Current valid JSON is below. It can be found at http://www.mocky.io/v2/5c6e61973
 		"name": "Car App",
 		"hoursAllocated": 200,
 		"hoursUsed": 100,
-		"onTrack": 2
+		"onTrack": 2,
+		"billableHours": 90,
+		"projectType": 0,
+		"projectStage": 2
 	},
 	{
 		"code": 3,
@@ -55,6 +61,9 @@ Current valid JSON is below. It can be found at http://www.mocky.io/v2/5c6e61973
 		"name": "Slack App",
 		"hoursAllocated": 50,
 		"hoursUsed": 10,
-		"onTrack": 1
+		"onTrack": 1,
+		"billableHours": 90,
+		"projectType": 0,
+		"projectStage": 1
 	}
 ]
