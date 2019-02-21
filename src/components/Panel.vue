@@ -32,6 +32,14 @@
                 </div>
             </div>
             <div class="form_group">
+                        <div class="form_title">
+                            <span class="light">Project Type:</span>
+                        </div>
+                        <div class="form_value">
+                            <span class="icon app">App</span>
+                        </div>
+                    </div>
+            <div class="form_group">
                 <div class="form_title">
                     <span class="light">Due Date:</span>
                 </div>

@@ -7,7 +7,7 @@
                     <h3 class="bold">Staff Happiness</h3>
                 </div>
             </header>
-            <section class="scroll">
+            
                 <table>
                     <thead>
                         <tr>
@@ -90,7 +90,7 @@
                             </tr>                                       
                     </tbody>
                 </table>
-            </section> 
+
         </div>
 
     </div>

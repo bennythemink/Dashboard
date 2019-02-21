@@ -5,7 +5,7 @@
                     <h3 class="bold">Invoices</h3>
                 </div>
             </header>
-            <section class="scroll">
+            
                 <table>
                     <thead>
                         <tr>
@@ -116,7 +116,7 @@
                             </tr>                                                     
                         </tbody>
                 </table>
-            </section>
+
         </div>
 </template>
 

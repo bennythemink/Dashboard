@@ -16,10 +16,6 @@ export default {
   },
   data: () => {
       return {
-          projects: [
-            "Paspaley",
-            "Samsung"
-        ]
       }
   }
 }

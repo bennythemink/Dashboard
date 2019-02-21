@@ -18,7 +18,7 @@ export default {
   },
   data: () => {
       return {
-          
+
       }
   }
 }
@@ -178,6 +178,7 @@ section.table_container{
     color: #9B9B9B;
     width: 15px;
     text-align: center;
+    cursor: pointer;
 }
 .form_value .icon{
     background-position: left center;
@@ -198,6 +199,13 @@ section.table_container{
 .icon.uat{
     background-image: url(../assets/svg/UAT.svg);
 }
+.icon.app{
+    background-image: url(../assets/svg/app.svg);
+    padding-left: 15px;
+}
+.icon.website{
+    background-image: url(../assets/svg/website.svg);
+}
 
 /*** Tables ***/
 table{
@@ -205,21 +213,39 @@ table{
    text-align: left;
    font-size: 11px;
    border-collapse: collapse;
+   table-layout: fixed;
 }
 
 th{
     font-weight: 300;  
     padding: 10px 15px;
+    border-top: 1px #FBFAFC solid;
 }
 td{
     height: 60px;
     border-top: 1px #FBFAFC solid;
     padding: 15px;
 }
-
+#invoices thead,
+#staff_happiness thead,
+#invoices tbody,
+#staff_happiness tbody{
+    display: block;
+}
+#invoices tbody,
+#staff_happiness tbody{
+    overflow: scroll;
+}
 /*** Invoices ***/
 
-td{
+#invoices tbody{
+    height: 300px;
+}
+#invoices th,
+#invoices td{
+    width: 150px;
+}
+#invoices  td{
     vertical-align: bottom;
 }
 .client{
@@ -228,9 +254,7 @@ td{
     flex-wrap: wrap;
     align-items: center;
 }
-#invoices .scroll{
-    max-height: 336px;
-}
+
 /*** Staff Happiness ***/
 #staff_happiness th:not(:first-of-type),
 #staff_happiness td:not(:first-of-type){
@@ -239,10 +263,16 @@ td{
 #staff_happiness td:nth-of-type(2) i{
     opacity: 0.5;
 }
+#staff_happiness tbody{
+    height: 175px;
+}
+#staff_happiness th,
+#staff_happiness td{
+    width: 148px;
+}
 #staff_happiness td{
     height: 0;
     padding: 10px 15px;
-    
 }
 
 #staff_happiness i{
@@ -321,7 +351,6 @@ td{
     overflow: hidden;
     background: #fff;
     box-shadow: 0px 0px 5px rgba(49, 48, 50, 0.05);
-
 }
 .scroll{
     overflow: scroll;
