@@ -7,13 +7,15 @@ export default new Vuex.Store({
   state: {
     projects: [
       {
-        client: "Suez",
+        code: 1,
+        client: "Suez STORE",
         name: "GetSorted App",
         hoursAllocated: 200,
         hoursUsed: 18
       },
       {
-        client: "IPS",
+        code: 2,
+        client: "IPS STORE",
         name: "Website",
         hoursAllocated: 100,
         hoursUsed: 90

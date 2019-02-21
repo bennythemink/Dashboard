@@ -1,7 +1,9 @@
 <template>
     <div id="left_side" class="scroll">
         
-        <Panel />
+      <!-- Loop through the projects in the store, pass them to the component for display -->
+      <Panel :key="project.code" v-for="project in this.$store.getters.projects" :project="project" />
+
     </div>
 </template>
 

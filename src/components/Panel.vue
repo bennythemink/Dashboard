@@ -6,21 +6,21 @@
                 <span class="status_title color_green">On Track</span><span class="status_signal background_green"></span>
             </div>
             <div class="heading">
-                <h4 class="light">Type Here</h4>
-                <h3 class="bold">Title Here</h3>
+                <h4 class="light">{{ project.client }}</h4>
+                <h3 class="bold">{{ project.name }}</h3>
             </div>
         </header>
         <section>
             <div class="chart">
                 <div class="top_title">
-                    <span class="title bold color_blue">50</span><span class="sub_title">Used</span>
+                    <span class="title bold color_blue">{{ project.hoursUsed }}</span><span class="sub_title">Used</span>
                 </div>
 
                 <!-- Custom Chart component -->
                 <Chart :percent=80 />    
 
                 <div class="bottom_title">
-                    <span class="title bold">200</span><span class="sub_title">Alocated</span>
+                    <span class="title bold">{{ project.hoursAllocated }}</span><span class="sub_title">Alocated</span>
                 </div>
             </div>
             <div class="form_group">
@@ -90,7 +90,13 @@ export default {
 
 components: {
     Chart
-}
+},
+props: {
+        project: {
+            type: Object,
+            required: true
+        }
+    },
 
 }
 </script>
