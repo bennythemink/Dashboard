@@ -1,9 +1,9 @@
 <template>
     <div class="panel">
         <header>
-            <div class="status_bar background_green"></div>
+            <div class="status_bar" :class="determineStatusBackgroundColour"></div>
             <div class="status">
-                <span class="status_title color_green">On Track</span><span class="status_signal background_green"></span>
+                <span class="status_title" :class="determineStatusColour">{{ determineStatus }}</span><span class="status_signal" :class="determineStatusBackgroundColour"></span>
             </div>
             <div class="heading">
                 <h4 class="light">{{ project.client }}</h4>
@@ -94,6 +94,42 @@ components: {
 computed: {
     percentageComplete () {
         return (this.project.hoursUsed / this.project.hoursAllocated) * 100
+    },
+    determineStatusBackgroundColour () {
+        switch (this.project.onTrack) {
+            case 0:
+                return "background_green" // on track
+            case 1:
+                return "background_amber" // behind
+            case 2:
+                return "background_red" // on hold
+            default:
+                return "background_green"
+        }
+    },
+    determineStatusColour () {
+        switch (this.project.onTrack) {
+            case 0:
+                return "color_green" // on track
+            case 1:
+                return "color_amber" // behind
+            case 2:
+                return "color_red" // on hold
+            default:
+                return "color_green"
+        }
+    },
+    determineStatus () {
+        switch (this.project.onTrack) {
+            case 0:
+                return "On Track" 
+            case 1:
+                return "Behind" 
+            case 2:
+                return "On Hold" 
+            default:
+                return "N/A"
+        }
     }
 },
 props: {
