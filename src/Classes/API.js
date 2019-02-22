@@ -7,7 +7,7 @@ export class API {
     }
 
     getProjects() {
-        return axios.get(this.baseURL + "5c6e68903400004f00892c1c").then(response => response.data)
+        return axios.get(this.baseURL + "5c6fd79938000079003fc9ff").then(response => response.data)
     }
 
     getStaffUtilisation() {
@@ -15,7 +15,7 @@ export class API {
     }
 
     getInvoices() {
-        return axios.get(this.baseURL + "5c6f840734000020568930f1").then(response => response.data)
+        return axios.get(this.baseURL + "5c6fd91638000079003fca09").then(response => response.data)
     }
 
     getHappiness() {

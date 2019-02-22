@@ -69,7 +69,7 @@
                     <span class="light">Client Happiness:</span>
                 </div>
                 <div class="form_value">
-                    <span><i class="far fa-smile color_green"></i></span>
+                    <span><i class="far" :class="determineHappiness(project.clientHappiness)"></i></span>
                     <i class="fas fa-angle-down"></i>
                     <select class="form_control" id="client_happiness">
                         <option value="0" selected>Happy</option>
@@ -162,17 +162,31 @@ computed: {
             case 0:
                 return "design"
             case 1:
-                return "dev"
+                return "development"
             case 2:
                 return "beta"
             case 3:
-                return "UAT"
+                return "uat"
             case 4:
                 return "warranty"
             default:
                 return "design"
         }
-    },
+    }
+},
+methods: {
+    determineHappiness(reading) {
+        switch (reading) {
+            case 0: 
+                return "fa-angry color_red"
+            case 1:
+                return "fa-meh color_amber"
+            case 2:
+                return "fa-smile color_green"
+            default:
+                return "fa-meh color_amber"
+        }
+    }
 },
 props: {
     project: {
