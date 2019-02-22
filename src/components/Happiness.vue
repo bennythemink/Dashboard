@@ -23,71 +23,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <tr v-for="happiness in this.$store.getters.happiness" :key="happiness.id">
                             <td>
                                 <div class="bold">
-                                    Overall Happiness
+                                    {{ happiness.title }}
                                 </div>
                             </td>
                             <td>
-                                <i class="far fa-smile color_green"></i>
+                                <i class="far" :class="determineHappiness(happiness.lastMonth)"></i>
                             </td>
                             <td>
-                                <i class="far fa-smile color_green"></i>
+                                <i class="far" :class="determineHappiness(happiness.thisMonth)"></i>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <div>
-                                    Category 1
-                                </div>
-                            </td>
-                            <td>
-                                <i class="far fa-smile color_green"></i>
-                            </td>
-                            <td>
-                                <i class="far fa-angry color_red"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div>
-                                    Category 2
-                                </div>
-                            </td>
-                            <td>
-                                <i class="far fa-meh color_amber"></i>
-                            </td>
-                            <td>
-                                <i class="far fa-meh color_amber"></i>
-                            </td>
-                        </tr>   
-                        <tr>
-                            <td>
-                                <div>
-                                    Category 3
-                                </div>
-                            </td>
-                            <td>
-                                <i class="far fa-smile color_green"></i>
-                            </td>
-                            <td>
-                                <i class="far fa-meh color_amber"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div>
-                                    Category 4
-                                </div>
-                            </td>
-                            <td>
-                                <i class="far fa-angry color_red"></i>
-                            </td>
-                            <td>
-                                <i class="far fa-smile color_green"></i>
-                            </td>
-                            </tr>                                       
+                                                              
                     </tbody>
                 </table>
 
@@ -98,6 +47,21 @@
 
 <script>
 export default {
+
+methods: {
+    determineHappiness(reading) {
+        switch (reading) {
+            case 0: 
+                return "fa-angry color_red"
+            case 1:
+                return "fa-meh color_amber"
+            case 2:
+                return "fa-smile color_green"
+            default:
+                return "fa-meh color_amber"
+        }
+    }
+}
 
 }
 </script>

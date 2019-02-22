@@ -22,6 +22,13 @@ new Vue({
       this.$store.commit('updateStaffUtilisation',data)
     })
     
+    api.getInvoices().then((data) => {
+      this.$store.commit('updateInvoices',data)
+    })
+
+    api.getHappiness().then((data) => {
+      this.$store.commit('updateHappiness',data)
+    })
 
   }
 }).$mount('#app')

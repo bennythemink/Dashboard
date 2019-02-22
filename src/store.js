@@ -6,11 +6,15 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     projects: [],
-    staff: []
+    staff: [],
+    invoices: [],
+    happiness: []
   },
   getters: {
     projects: state => state.projects,
-    staff: state => state.staff
+    staff: state => state.staff,
+    invoices: state => state.invoices,
+    happiness: state => state.happiness
   },
   mutations: {
     updateProjects(state,updatedProjects) {
@@ -18,6 +22,12 @@ export default new Vuex.Store({
     },
     updateStaffUtilisation(state,updatedStaff) {
       state.staff = updatedStaff
+    },
+    updateInvoices(state,updatedInvoices) {
+      state.invoices = updatedInvoices
+    },
+    updateHappiness(state, updatedHappiness) {
+      state.happiness = updatedHappiness
     }
   },
   actions: {

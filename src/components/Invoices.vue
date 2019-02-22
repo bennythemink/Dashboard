@@ -24,96 +24,21 @@
                         </tr>
                     </thead>
                         <tbody>
-                            <tr>
+                            <tr v-for="invoice in this.$store.getters.invoices" :key="invoice.id">
                                 <td>
-                                    <div class="client"><span class="bold">Client Name</span> <span class="status_signal background_green"></span></div>
-                                    <div class="date">18th May 2019</div>
+                                    <div class="client"><span class="bold">{{ invoice.client }}</span></div>
+                                    <div class="date">{{ invoice.due }}</div>
                                 </td>
                                 <td>
-                                    <div>10,000</div>    
+                                    <div>{{ invoice.amount }}</div>    
                                 </td>
                                 <td>
-                                    <div>1 day ago</div>    
+                                    <div>{{ invoice.sent }}</div>    
                                 </td>
                                 <td>
-                                    <div><i class="fas fa-check color_green"></i></div>    
+                                    <div><i class="fas" :class="determinePaidClass(invoice.paid)"></i></div>    
                                 </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="client"><span class="bold">Client Name</span> <span class="status_signal background_amber"></span></div>
-                                    <div class="date">18th May 2019</div>
-                                </td>
-                                <td>
-                                    <div>10,000</div>    
-                                </td>
-                                <td>
-                                    <div>1 day ago</div>    
-                                </td>
-                                <td>
-                                    <div><i class="fas fa-times color_red"></i></div>    
-                                </td>
-                            </tr>   
-                            <tr>
-                                <td>
-                                    <div class="client"><span class="bold">Client Name</span> <span class="status_signal background_amber"></span></div>
-                                    <div class="date">18th May 2019</div>
-                                </td>
-                                <td>
-                                    <div>125,000</div>    
-                                </td>
-                                <td>
-                                    <div>1 day ago</div>    
-                                </td>
-                                <td>
-                                    <div><i class="fas fa-times color_red"></i></div>    
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="client"><span class="bold">Client Name</span> <span class="status_signal background_amber"></span></div>
-                                    <div class="date">18th May 2019</div>
-                                </td>
-                                <td>
-                                    <div>100,000</div>    
-                                </td>
-                                <td>
-                                    <div>1 day ago</div>    
-                                </td>
-                                <td>
-                                    <div><i class="fas fa-times color_red"></i></div>    
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="client"><span class="bold">Client Name</span> <span class="status_signal background_red"></span></div>
-                                    <div class="date">18th May 2019</div>
-                                </td>
-                                <td>
-                                    <div>500,000</div>    
-                                </td>
-                                <td>
-                                    <div>1 day ago</div>    
-                                </td>
-                                <td>
-                                    <div><i class="fas fa-times color_red"></i></div>    
-                                </td>
-                            </tr> 
-                            <tr>
-                                <td>
-                                    <div class="client"><span class="bold">Client Name</span> <span class="status_signal background_red"></span></div>
-                                    <div class="date">18th May 2019</div>
-                                </td>
-                                <td>
-                                    <div>500,000</div>    
-                                </td>
-                                <td>
-                                    <div>1 day ago</div>    
-                                </td>
-                                <td>
-                                    <div><i class="fas fa-times color_red"></i></div>    
-                                </td>
-                            </tr>                                                     
+                            </tr>                                                   
                         </tbody>
                 </table>
 
@@ -123,6 +48,11 @@
 <script>
 export default {
 
+methods:  {
+    determinePaidClass (isPaid) {
+        return (isPaid) ? "fa-check color_green" : "fa-times color_red"
+    }
+}
 }
 </script>
 
