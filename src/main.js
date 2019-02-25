@@ -11,7 +11,6 @@ new Vue({
   store,
   render: h => h(App),
   mounted: function () {
-    // console.log("mounted")
 
     const api = new API()
 
