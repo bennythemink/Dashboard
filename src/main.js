@@ -14,6 +14,7 @@ new Vue({
     // console.log("mounted")
 
     const api = new API()
+
     api.getProjects().then((data) => {
       this.$store.commit('updateProjects',data)
     })
