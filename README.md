@@ -35,17 +35,18 @@ Current valid JSON is below. Use https://jsonlint.com to validate changes.
 
 
 <!-- Projects -->
-<!-- http://www.mocky.io/v2/5c6fd79938000079003fc9ff -->
+<!-- http://www.mocky.io/v2/5c7786fa30000059009d62d1 -->
 [{
     	"code": 1,
 		"client": "Apple",
 		"name": "Watch App",
 		"hoursAllocated": 100,
 		"hoursUsed": 90,
-		"onTrack": 3,
+		"onTrack": 3, // 0 = on track, 1 = behind, 2 = on hold, 3 = N/A
 		"billableHours": 90,
-		"projectType": 0,
-		"projectStage": 0
+		"projectType": 0, // 0 = app, 1 = website, 2 = N/A
+		"projectStage": 0, // 0 = SOW, 1 = design, 2 = dev, 3 = beta, 4 = uat, 5 = warranty
+		"clientHappiness": = 2 // 0 = unhappy, 1 = OK, 2 = happy 
 	},
 	{
 		"code": 2,

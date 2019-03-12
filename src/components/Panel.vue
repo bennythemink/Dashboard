@@ -104,7 +104,7 @@ computed: {
             case 2:
                 return "background_red" // on hold
             default:
-                return "background_green"
+                return "background_amber"
         }
     },
     determineStatusColour () {
@@ -116,7 +116,7 @@ computed: {
             case 2:
                 return "color_red" // on hold
             default:
-                return "color_green"
+                return "color_amber"
         }
     },
     determineStatus () {
@@ -138,20 +138,22 @@ computed: {
             case 1:
                 return "website"
             default:
-                return "app"
+                return "N/A"
         }
     },
     determineProjectStage () {
         switch (this.project.projectStage) {
             case 0:
-                return "Design"
+                return "SOW"
             case 1:
-                return "Dev"
+                return "Design"
             case 2:
-                return "Beta"
+                return "Dev"
             case 3:
-                return "UAT"
+                return "Beta"
             case 4:
+                return "UAT"
+            case 5:
                 return "Warranty"
             default:
                 return "N/A"
@@ -160,17 +162,19 @@ computed: {
     determineProjectStageIcon () {
         switch (this.project.projectStage) {
             case 0:
-                return "design"
+                return "sow"
             case 1:
-                return "development"
+                return "design"
             case 2:
-                return "beta"
+                return "dev"
             case 3:
-                return "uat"
+                return "beta"
             case 4:
+                return "uat"
+            case 5:
                 return "warranty"
             default:
-                return "design"
+                return "na"
         }
     }
 },
