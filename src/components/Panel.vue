@@ -44,9 +44,7 @@
                     <span class="light">Due Date:</span>
                 </div>
                 <div class="form_value">
-                    <span>Friday, 17th May 2019</span>
-                    <i class="far fa-calendar"></i>
-                    <input type="date" class="form_control" id="due_date"/>
+                    <span>{{ project.dueDate }}</span>
                 </div>
             </div>
             <div class="form_group">
@@ -55,13 +53,6 @@
                 </div>
                 <div class="form_value">
                     <span class="icon" :class="determineProjectStageIcon">{{ determineProjectStage }}</span>
-                    <i class="fas fa-angle-down"></i>
-                    <select class="form_control" id="project_status">
-                        <option value="0" selected>Design</option>
-                        <option value="1">Dev</option>
-                        <option value="2">Beta</option>
-                        <option value="3">UAT</option>
-                    </select>
                 </div>
             </div>
             <div class="form_group">
@@ -70,12 +61,6 @@
                 </div>
                 <div class="form_value">
                     <span><i class="far" :class="determineHappiness(project.clientHappiness)"></i></span>
-                    <i class="fas fa-angle-down"></i>
-                    <select class="form_control" id="client_happiness">
-                        <option value="0" selected>Happy</option>
-                        <option value="1">Nuteral</option>
-                        <option value="2">Angry</option>
-                    </select>
                 </div>
             </div>
         </section>
@@ -166,11 +151,11 @@ computed: {
             case 1:
                 return "design"
             case 2:
-                return "dev"
+                return "development"
             case 3:
                 return "beta"
             case 4:
-                return "uat"
+                return "UAT"
             case 5:
                 return "warranty"
             default:

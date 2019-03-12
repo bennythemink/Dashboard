@@ -35,7 +35,7 @@ Current valid JSON is below. Use https://jsonlint.com to validate changes.
 
 
 <!-- Projects -->
-<!-- http://www.mocky.io/v2/5c7786fa30000059009d62d1 -->
+<!-- http://www.mocky.io/v2/5c877a4a32000069103bd226 -->
 [{
     	"code": 1,
 		"client": "Apple",
@@ -44,6 +44,7 @@ Current valid JSON is below. Use https://jsonlint.com to validate changes.
 		"hoursUsed": 90,
 		"onTrack": 3, // 0 = on track, 1 = behind, 2 = on hold, 3 = N/A
 		"billableHours": 90,
+		"dueDate": "Monday, 1st April",
 		"projectType": 0, // 0 = app, 1 = website, 2 = N/A
 		"projectStage": 0, // 0 = SOW, 1 = design, 2 = dev, 3 = beta, 4 = uat, 5 = warranty
 		"clientHappiness": = 2 // 0 = unhappy, 1 = OK, 2 = happy 
@@ -56,6 +57,7 @@ Current valid JSON is below. Use https://jsonlint.com to validate changes.
 		"hoursUsed": 100,
 		"onTrack": 2,
 		"billableHours": 90,
+		"dueDate": "Monday, 1st April",
 		"projectType": 0,
 		"projectStage": 2
 	}

@@ -10,7 +10,7 @@
                     <thead>
                         <tr>
                             <th>
-                                date
+                                Due Date
                             </th>
                             <th>
                                 Amount
@@ -26,7 +26,7 @@
                         <tbody>
                             <tr v-for="invoice in this.$store.getters.invoices" :key="invoice.id">
                                 <td>
-                                    <div class="client"><span class="bold">{{ invoice.client }}</span></div>
+                                    <div class="client"><span class="bold">{{ invoice.client }}</span> <span class="status_signal background_green"></span></div>
                                     <div class="date">{{ invoice.due }}</div>
                                 </td>
                                 <td>
