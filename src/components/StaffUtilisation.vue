@@ -1,13 +1,13 @@
 <template>
     
-    <div class="panel">
+    <div class="panel" id="utilisation">
             <header>
                 <div class="heading">
                     <h3 class="bold">Staff Utilisation</h3>
                 </div>
             </header>
             <section>
-                <div class="scroll" style="max-height: 250px">
+                <div class="scroll">
 
                     <div v-for="(staff,index) in this.$store.getters.staff" :key="staff.id" class="chart"> 
                         <div class="top_title">

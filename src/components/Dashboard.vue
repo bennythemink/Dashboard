@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div id="flex_wrapper">
+        <Banner />
         <ProjectList />
         <Utils />
     </div>
@@ -9,12 +10,14 @@
 
 import Utils from '@/components/Utils.vue'
 import ProjectList from '@/components/ProjectList.vue'
+import Banner from '@/components/Banner.vue'
 
 export default {
   name: 'dashboard',
   components: {
     ProjectList,
-    Utils
+    Utils,
+    Banner
   },
   data: () => {
       return {
@@ -31,6 +34,7 @@ body{
     padding: 20px;
     margin: 0;
 }
+
 *{
     box-sizing: border-box;
     position: relative;
@@ -39,7 +43,12 @@ body{
     font-style: normal;
     color:#313032;
 }
-
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: #18407E;
+}
 .bold{
     font-family: futura-pt-bold, sans-serif;
     font-weight: 700;
@@ -47,9 +56,6 @@ body{
 }
 .light{
     font-weight: 300; 
-}
-h4 {
-    text-align: left;
 }
 h1,h2,h3,h4,h5,h6{
     margin: 0;
@@ -109,7 +115,7 @@ section.table_container{
 
 /*** Bar Chart ***/
 .chart:not(:last-of-type){
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 .top_title{
     margin-bottom: 5px;
@@ -152,7 +158,7 @@ section.table_container{
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    padding: 10px 0;
+    padding: 8px 0;
 }
 .form_title{
     margin-right: 10px; 
@@ -190,6 +196,9 @@ section.table_container{
     padding-left: 20px;
     height: 15px;
 }
+.icon.sow{
+    background-image: url(../assets/svg/sow.svg);
+}
 .icon.design{
     background-image: url(../assets/svg/design.svg);
 }
@@ -202,6 +211,9 @@ section.table_container{
 .icon.uat{
     background-image: url(../assets/svg/UAT.svg);
 }
+.icon.warranty{
+    background-image: url(../assets/svg/warranty.svg);
+}
 .icon.app{
     background-image: url(../assets/svg/app.svg);
     padding-left: 15px;
@@ -210,13 +222,14 @@ section.table_container{
     background-image: url(../assets/svg/website.svg);
 }
 
+
 /*** Tables ***/
 table{
    width: 100%;
    text-align: left;
    font-size: 11px;
    border-collapse: collapse;
-   table-layout: fixed;
+
 }
 
 th{
@@ -225,31 +238,20 @@ th{
     border-top: 1px #FBFAFC solid;
 }
 td{
-    height: 60px;
+    height: 62px;
     border-top: 1px #FBFAFC solid;
     padding: 15px;
 }
-#invoices thead,
-#staff_happiness thead,
-#invoices tbody,
-#staff_happiness tbody{
-    display: block;
-}
-#invoices tbody,
-#staff_happiness tbody{
-    overflow: scroll;
-}
+
+
 /*** Invoices ***/
 
-#invoices tbody{
-    height: 300px;
-}
-#invoices th,
-#invoices td{
-    width: 150px;
-}
+
 #invoices  td{
     vertical-align: bottom;
+}
+#invoices  td div:not(:last-of-type){
+    margin-bottom: 5px;
 }
 .client{
     display: flex;
@@ -333,19 +335,16 @@ td{
     box-shadow: 0px 0px 5px 0px #5FAD56;
 } 
 
-#grid{
+#flex_wrapper{
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
+    align-items: flex-start;
 }
-#left_side,#right_side{
-  display: inline-block;
-  vertical-align: top;
+#top{
+    flex: 0 0 100%;
 }
-
 #right_side{
-    width: calc(30% - 10px);
-    margin-left: 10px;
+   flex: 0 0 30%
 }
 
 .panel{
@@ -354,31 +353,42 @@ td{
     overflow: hidden;
     background: #fff;
     box-shadow: 0px 0px 5px rgba(49, 48, 50, 0.05);
+
 }
-.scroll{
-    overflow: scroll;
+
+#top .panel{
+    padding: 0 20px;
+    margin: 0 0 10px 0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    box-shadow: none;
 }
 #left_side{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin: -10px;
-    max-height: calc(100vh - 20px);
-    width: calc(70% - 10px);
+    /* max-height: calc(100vh - 20px); */
+    flex: 0 0 70%;
     margin-right: 10px;
 }
 #left_side .panel{
     flex: 0 0 20%;
     max-width: calc(20% - 20px);
-    height: 334px;
     min-width: 200px;
 }
+#left_side .chart {
+    margin-bottom: 0;
+}
 #right_side{
-    position: absolute;
+    /* position: absolute;
     right: 20px;
-    top: 20px;
+    top: 100px;
     width: 30%;
-    height: calc(100vh - 40px);
+    height: calc(100vh - 120px); */
 }
 #right_side .panel{
     margin:0 0 20px 0;
