@@ -13,7 +13,7 @@ export default new Vuex.Store({
   getters: {
     projects: state => state.projects,
     staff: state => state.staff,
-    invoices: state => state.invoices,
+    clientInvoices: state => state.invoices,
     happiness: state => state.happiness
   },
   mutations: {

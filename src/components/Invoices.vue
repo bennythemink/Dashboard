@@ -24,19 +24,19 @@
                         </tr>
                     </thead>
                         <tbody>
-                            <tr v-for="invoice in this.$store.getters.invoices" :key="invoice.id">
+                            <tr v-for="client in this.$store.getters.clientInvoices" :key="client.id">
                                 <td>
-                                    <div class="client"><span class="bold">{{ invoice.client }}</span> <span class="status_signal background_green"></span></div>
-                                    <div class="date">{{ invoice.due }}</div>
+                                    <div class="client"><span class="bold">{{ client.client }}</span> <span class="status_signal background_green"></span></div>
+                                    <div v-for="invoice in client.invoices" :key="invoice.id" class="date">{{ invoice.due }}</div>
                                 </td>
                                 <td>
-                                    <div>{{ invoice.amount }}</div>    
+                                    <div v-for="invoice in client.invoices" :key="invoice.id">{{ invoice.amount }}</div>
                                 </td>
                                 <td>
-                                    <div>{{ invoice.sent }}</div>    
+                                    <div v-for="invoice in client.invoices" :key="invoice.id">{{ invoice.sent }}</div>
                                 </td>
                                 <td>
-                                    <div><i class="fas" :class="determinePaidClass(invoice.paid)"></i></div>    
+                                    <div v-for="invoice in client.invoices" :key="invoice.id"><i class="fas" :class="determinePaidClass(invoice.paid)"></i></div>
                                 </td>
                             </tr>                                                   
                         </tbody>
