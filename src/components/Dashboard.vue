@@ -386,13 +386,13 @@ td{
 #left_side .chart {
     margin-bottom: 0;
 }
-#right_side{
+/*#right_side{
     /* position: absolute;
     right: 20px;
     top: 100px;
     width: 30%;
-    height: calc(100vh - 120px); */
-}
+    height: calc(100vh - 120px); * /
+}*/
 #right_side .panel{
     margin:0 0 20px 0;
 }
