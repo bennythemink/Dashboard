@@ -35,22 +35,22 @@ Current valid JSON is below. Use https://jsonlint.com to validate changes.
 
 
 <!-- Projects -->
-<!-- http://www.mocky.io/v2/5c877a4a32000069103bd226 -->
+<!-- http://www.mocky.io/v2/5c8994062f0000255dec9872 -->
 [{
-    	"code": 1,
+    	"id": 1,
 		"client": "Apple",
 		"name": "Watch App",
 		"hoursAllocated": 100,
 		"hoursUsed": 90,
-		"onTrack": 3, // 0 = on track, 1 = behind, 2 = on hold, 3 = N/A
+		"onTrack": 3, // options are: On Track, Behind, On Hold
 		"billableHours": 90,
 		"dueDate": "Monday, 1st April",
-		"projectType": 0, // 0 = app, 1 = website, 2 = N/A
-		"projectStage": 0, // 0 = SOW, 1 = design, 2 = dev, 3 = beta, 4 = uat, 5 = warranty
-		"clientHappiness": = 2 // 0 = unhappy, 1 = OK, 2 = happy 
+		"projectType": 0, // App, Website, N/A
+		"projectStage": 0, // SOW, Design, Development, Beta, UAT, Warranty
+		"clientHappiness": = 2 // Unhappy, Moderate, Happy 
 	},
 	{
-		"code": 2,
+		"id": 2,
 		"client": "Tesla",
 		"name": "Car App",
 		"hoursAllocated": 200,
@@ -93,76 +93,73 @@ Current valid JSON is below. Use https://jsonlint.com to validate changes.
 ]
 
 <!-- Invoices -->
-<!-- http://www.mocky.io/v2/5c6fd91638000079003fca09 -->
-[{
-    	"id": 1,
-		"client": "Apple",
-		"amount": "$1,000,000",
-		"due": "1st April 2019",
-		"sent": "20th Feb 2019",
-		"paid": true
-	},
-	{
-		"id": 1,
-		"client": "Telstra",
-		"amount": "$900,000",
-		"due": "1st April 2019",
-		"sent": "20th Feb 2019",
-		"paid": true
-	},
-	{
-		"id": 1,
-		"client": "Tesla",
-		"amount": "$2,000,000",
-		"due": "1st April 2019",
-		"sent": "20th Feb 2019",
-		"paid": true
-	},
-	{
-		"id": 1,
-		"client": "Slack",
-		"amount": "$400,000",
-		"due": "1st April 2019",
-		"sent": "20th Feb 2019",
-		"paid": true
-	},
-	{
-		"id": 1,
-		"client": "NASA",
-		"amount": "$23,000",
-		"due": "1st April 2019",
-		"sent": "20th Feb 2019",
-		"paid": true
-	},
-	{
-		"id": 1,
-		"client": "Samsung",
-		"amount": "$1,000",
-		"due": "1st April 2019",
-		"sent": "20th Feb 2019",
-		"paid": true
-	}
-]
-
-<!-- Happiness -->
-<!-- http://www.mocky.io/v2/5c6f8d693400001059893126 -->
-
-[{
-    	"id": 1,
-		"title": "Overall Happiness",
-		"lastMonth": 0,
-		"thisMonth": 2
-	},
-	{
-		"id": 1,
-		"title": "Overall Happiness",
-		"lastMonth": 0,
-		"thisMonth": 2
-	},
-	{
-		"id": 1,
-		"title": "Overall Happiness",
-		"lastMonth": 0,
-		"thisMonth": 2
-	}
+<!-- http://www.mocky.io/v2/5c88213a3200007e0f3bd6b2 -->
+[
+    {
+        "clientID": 1,
+        "client": "Apple",
+        "invoices": [
+            {
+                "id": 1,
+                "amount": "$1,000,000",
+                "due": "1st April 2019",
+                "sent": "20th Feb 2019",
+                "paid": true
+            }
+        ]
+    },
+    {
+        "clientID": 2,
+        "client": "Samsung",
+        "invoices": [
+            {
+                "id": 3,
+                "amount": "$1,000,000",
+                "due": "1st April 2019",
+                "sent": "20th Feb 2019",
+                "paid": true
+            },
+            {
+                "id": 4,
+                "amount": "$10,000",
+                "due": "1st April 2019",
+                "sent": "20th Feb 2019",
+                "paid": false
+            }
+        ]
+    },
+    {
+        "clientID": 3,
+        "client": "Telstra",
+        "invoices": [
+            {
+                "id": 5,
+                "amount": "$1,000,000",
+                "due": "1st April 2019",
+                "sent": "20th Feb 2019",
+                "paid": false
+            },
+            {
+                "id": 6,
+                "amount": "$10,000",
+                "due": "1st April 2019",
+                "sent": "20th Feb 2019",
+                "paid": false
+            },
+            {
+                "id": 7,
+                "amount": "$1,000,000",
+                "due": "1st April 2019",
+                "sent": "20th Feb 2019",
+                "paid": false
+            },
+            {
+                "id": 8,
+                "amount": "$10,000",
+                "due": "1st April 2019",
+                "sent": "20th Feb 2019",
+                "paid": false
+            }
+        ]
+    }
 ]

@@ -7,7 +7,7 @@ export class API {
     }
 
     getProjects() {
-        return axios.get(this.baseURL + "5c877a4a32000069103bd226").then(response => response.data)
+        return axios.get(this.baseURL + "5c8994062f0000255dec9872").then(response => response.data)
     }
 
     getStaffUtilisation() {
