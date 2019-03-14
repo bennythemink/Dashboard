@@ -3,7 +3,7 @@
     <div id="top">
         <div class="panel">
             <img src="../assets/svg/appscore.svg"/>
-            <a href="" target="_blank">Login to Admin</a>
+            <router-link to="/about">Login to Admin</router-link>
         </div>
     </div>
 

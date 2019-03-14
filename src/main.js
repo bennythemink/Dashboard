@@ -4,6 +4,12 @@ import router from './router'
 import store from './store'
 import {API} from './classes/API.js'
 
+import Default from "./layouts/Default.vue";
+import Admin from "./layouts/Admin.vue";
+
+Vue.component('default-layout',Default);
+Vue.component('admin-layout',Admin);
+
 Vue.config.productionTip = false
 
 new Vue({

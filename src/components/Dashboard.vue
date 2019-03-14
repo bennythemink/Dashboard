@@ -1,6 +1,6 @@
 <template>
     <div id="flex_wrapper">
-        <Banner />
+        <!-- <Banner /> -->
         <ProjectList />
         <Utils />
     </div>
