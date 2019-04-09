@@ -22,3 +22,8 @@ export default {
 }
 
 </script>
+
+<style>
+  @import "https://use.typekit.net/mof2inc.css";
+  @import "https://use.fontawesome.com/releases/v5.7.2/css/all.css";
+</style>

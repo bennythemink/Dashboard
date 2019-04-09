@@ -32,9 +32,5 @@ new Vue({
       this.$store.commit('updateInvoices',data)
     })
 
-    api.getHappiness().then((data) => {
-      this.$store.commit('updateHappiness',data)
-    })
-
   }
 }).$mount('#app')

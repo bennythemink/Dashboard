@@ -7,14 +7,12 @@ export default new Vuex.Store({
   state: {
     projects: [],
     staff: [],
-    invoices: [],
-    happiness: []
+    invoices: []
   },
   getters: {
     projects: state => state.projects,
     staff: state => state.staff,
-    clientInvoices: state => state.invoices,
-    happiness: state => state.happiness
+    clientInvoices: state => state.invoices
   },
   mutations: {
     updateProjects(state,updatedProjects) {
@@ -25,9 +23,6 @@ export default new Vuex.Store({
     },
     updateInvoices(state,updatedInvoices) {
       state.invoices = updatedInvoices
-    },
-    updateHappiness(state, updatedHappiness) {
-      state.happiness = updatedHappiness
     }
   },
   actions: {
