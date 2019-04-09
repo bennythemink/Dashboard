@@ -17,6 +17,20 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
+*{
+    box-sizing: border-box;
+    position: relative;
+    font-family: futura-pt, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color:#313032;
+    font-size: 12px;
+}
+main{
+    margin-left: 240px;
+    padding: 20px;
+}
 
 </style>

@@ -3,25 +3,33 @@ import axios from 'axios'
 export class API {
 
     constructor() {
-        this.baseURL = "http://www.mocky.io/v2/"
+        // this.baseURL = "http://www.mocky.io/v2/"
+        this.baseURL = "https://ancient-woodland-24994.herokuapp.com/api/v2/"
+        this.authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YzkyMDc1NzRiMzRhYTEyMTg1ZjlkZmIiLCJpYXQiOjE1NTM0MDQwOTd9.zFpA1qDtouUexHoyBkPW6OJjZUih9cDGoe2SNhhOWnI';
+    }
+
+    createAxiosInstance(resource) {
+        return axios.create({
+            baseURL: this.baseURL + resource + '/',
+            headers: {
+                'Content-Type': 'application/json',
+                'x-auth-token': this.authToken
+            }
+        });
     }
 
     getProjects() {
-        return axios.get(this.baseURL + "5c8994062f0000255dec9872").then(response => response.data)
+        const instance = this.createAxiosInstance("projects"); 
+        return instance.get().then(response => response.data);
     }
 
     getStaffUtilisation() {
-        return axios.get(this.baseURL + "5c783f303000000d0049ae00").then(response => response.data)
+        const instance = this.createAxiosInstance("utilisations");
+        return instance.get().then(response => response.data);
     }
 
     getInvoices() {
-        // return axios.get(this.baseURL + "5c6fd91638000079003fca09").then(response => response.data)
-        return axios.get(this.baseURL + "5c88213a3200007e0f3bd6b2").then(response => response.data)
+        const instance = this.createAxiosInstance("invoices");
+        return instance.get().then(response => response.data);
     }
-
-    getHappiness() {
-        return axios.get(this.baseURL + "5c6f8d693400001059893126").then(response => response.data)
-    }
-    
-
 }

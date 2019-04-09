@@ -26,4 +26,56 @@ export default {
 
 <style scoped>
     /* @import '../assets/styles/global.css'; */
+
+body{
+    background: #FBFAFC;
+    margin: 0;
+    color:#313032;
+    
+}
+*{
+    box-sizing: border-box;
+    position: relative;
+    font-family: futura-pt, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color:#313032;
+    font-size: 12px;
+}
+#nav_container{
+    padding: 40px;
+    max-width: 240px;
+    width: 240px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    background: #fff;
+}
+#logo{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.btn_link{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.btn_link.with_icon .btn_title{
+    margin-left: 5px;
+}
+.menu_item{
+    opacity: .2;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.menu_item:not(:last-of-type){
+    margin-bottom: 20px;
+}
+.menu_item.active,
+.menu_item:hover{
+    opacity: 1;
+}
+
 </style>

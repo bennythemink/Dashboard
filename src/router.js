@@ -21,9 +21,15 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },
     {
+      path: '/admin/projects',
+      name: 'admin',
+      meta: { layout: 'admin' },
+      component: () => import('@/components/AdminProjectList.vue')
+    },
+    {
       path: '*',
       name: '404',
-      component: require("@/pages/404.vue").default
+      component: require("@/views/404.vue").default
     }
   ]
 })
