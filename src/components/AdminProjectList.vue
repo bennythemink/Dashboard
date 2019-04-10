@@ -3,10 +3,12 @@
     <header>
         <h1>
             <span class="main_title bold">Projects</span>
-            <span class="sub_title"><i class="fas fa-check icon"></i> Check what projects you want to appear on the front end.</span>
         </h1>
         <div>
-            <input type="text" class="form_control" placeholder="Search for project..." id="search-projects">
+            <!-- <input type="text" class="form_control" placeholder="Search for project..." id="search-projects"> -->
+            <button type="submit" class="btn btn_primary">
+                <span class="btn_title">Add Project</span>
+            </button>
         </div>
     </header>
     <section>
@@ -16,75 +18,38 @@
                     <th>Client</th>
                     <th>Project</th>
                     <th>Project Type</th>
-                    <th colspan="2">Project Phase</th>
+                    <th colspan="3">Project Phase</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr v-for="(project,index) in this.$store.getters.projects" :key="index" >
                     <td>
-                        <input type="checkbox" id="0" class="checkbox"/>
-                        <label for="0" class="custom_checkbox">
-                            <i class="fas fa-check icon"></i> 
-                            <span class="title">Samsung</span>
-                        </label>
+                        <span class="title">{{ project.client }}</span>
                     </td>
                     <td>
-                        Samsung phase 4
+                        {{ project.name }}
                     </td>
                     <td>
-                        App
+                        {{ project.projectType }}
                     </td>
                     <td>
-                        Development
+                        {{ project.projectStage }}
                     </td>  
                     <td>
-                        <div class="editor_menu">
-                            <img src="../assets/svg/ellipsis.svg"/>
-                            <div class="pop_up_menu">
-                                <div class="btn_link with_icon">
-                                    <span class="icon"><img src="../assets/svg/edit.svg"/></span>
-                                    <span class="btn_title">Edit</span>
-                                </div>
-                                <div class="btn_link with_icon">
-                                    <span class="icon"><img src="../assets/svg/bin.svg"/></span>
-                                    <span class="btn_title">Delete</span>
-                                </div>
-                            </div>
+                        <div class="btn_link with_icon">
+                            <!-- <router-link to="/admin/projects/edit"> -->
+                            <router-link :to="{ name: 'editProject', props: { project: project } }">
+                                <span class="icon"><img src="../assets/svg/edit.svg"/></span>
+                                <span class="btn_title">Edit</span>
+                            </router-link>
                         </div>
-                    </td>  
-                </tr>
-                <tr>
-                    <td>
-                        <input type="checkbox" id="1" class="checkbox"/>
-                        <label for="1" class="custom_checkbox">
-                            <i class="fas fa-check icon"></i> 
-                            <span class="title">Samsung</span>
-                        </label>
                     </td>
                     <td>
-                        Samsung phase 4
-                    </td>
-                    <td>
-                        App
-                    </td>
-                    <td>
-                        Development
-                    </td>  
-                    <td>
-                        <div class="editor_menu active">
-                            <img src="../assets/svg/ellipsis.svg"/>
-                            <div class="pop_up_menu">
-                                <div class="btn_link with_icon">
-                                    <span class="icon"><img src="../assets/svg/edit.svg"/></span>
-                                    <span class="btn_title">Edit</span>
-                                </div>
-                                <div class="btn_link with_icon">
-                                    <span class="icon"><img src="../assets/svg/bin.svg"/></span>
-                                    <span class="btn_title">Delete</span>
-                                </div>
-                            </div>
+                        <div class="btn_link with_icon">
+                            <span class="icon"><img src="../assets/svg/bin.svg"/></span>
+                            <span class="btn_title">Delete</span>
                         </div>
-                    </td>  
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -99,6 +64,6 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+@import "./../assets/styles/global.css";
 </style>

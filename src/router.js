@@ -27,6 +27,18 @@ export default new Router({
       component: () => import('@/components/AdminProjectList.vue')
     },
     {
+      path: '/admin/projects/add',
+      name: 'addProject',
+      meta: { layout: 'admin' },
+      component: () => import('@/components/AdminProjectAddEdit.vue')
+    },
+    {
+      path: '/admin/projects/edit',
+      name: 'editProject',
+      meta: { layout: 'admin' },
+      component: () => import('@/components/AdminProjectAddEdit.vue')
+    },
+    {
       path: '*',
       name: '404',
       component: require("@/views/404.vue").default

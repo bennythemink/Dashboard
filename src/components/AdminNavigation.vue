@@ -6,12 +6,16 @@
     </div>
     <nav id="main_nav">
         <div class="menu_item projects btn_link with_icon active">
-            <span class="icon"><img src="../assets/svg/projects.svg"/></span>
-            <span class="btn_title bold">Projects</span>
+            <router-link to="/admin/projects">
+                <span class="icon"><img src="../assets/svg/projects.svg"/></span>
+                <span class="btn_title bold">Projects</span>
+            </router-link>
         </div>
         <div class="menu_item invoices with_icon btn_link">
+            <router-link to="/admin/invoices">
                 <span class="icon"><img src="../assets/svg/invoice.svg"/></span>
                 <span class="btn_title bold">Invoices</span>
+            </router-link>
         </div>
     </nav>
 </div>

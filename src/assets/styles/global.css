@@ -100,7 +100,7 @@ form .form_control{
     height: 50px;
 }
 select.form_control{
-    background-image: url(../assets/svg/select-arrow.svg);
+    background-image: url(../../assets/svg/select-arrow.svg);
     background-repeat: no-repeat;
     background-position:  calc(100% - 15px) center;
     appearance: none;
@@ -228,6 +228,7 @@ transition: background-color 5000s ease-in-out 0s;
 .custom_checkbox .icon{
     opacity: .2;
     cursor: pointer;
+    padding-right: 5px;
 }
 .checkbox{
     position: absolute;
@@ -295,7 +296,7 @@ color: #5FAD56;
 
 
 #search-projects{
-    background-image: url(../assets/svg/magnifying-glass.svg);
+    background-image: url(../../assets/svg/magnifying-glass.svg);
     background-repeat: no-repeat;
     background-position: calc(100% - 15px) center;
     padding-right: 40px;
