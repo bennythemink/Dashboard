@@ -35,6 +35,7 @@ export default new Router({
     {
       path: '/admin/projects/edit',
       name: 'editProject',
+      props: true,
       meta: { layout: 'admin' },
       component: () => import('@/components/AdminProjectAddEdit.vue')
     },

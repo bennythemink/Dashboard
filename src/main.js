@@ -6,6 +6,7 @@ import {API} from './classes/API.js'
 
 import Default from "./layouts/Default.vue";
 import Admin from "./layouts/Admin.vue";
+import { async } from 'q';
 
 Vue.component('default-layout',Default);
 Vue.component('admin-layout',Admin);
@@ -16,12 +17,15 @@ new Vue({
   router,
   store,
   render: h => h(App),
-  mounted: function () {
+  mounted: async function () {
 
     const api = new API()
 
-    api.getProjects().then((data) => {
-      this.$store.commit('updateProjects',data)
+    const projects = await api.getProjects();
+    this.$store.commit('updateProjects',projects);
+
+    api.getClients().then((data) => {
+      this.$store.commit('updateClients',data)
     })
 
     api.getStaffUtilisation().then((data) => {
@@ -31,6 +35,10 @@ new Vue({
     api.getInvoices().then((data) => {
       this.$store.commit('updateInvoices',data)
     })
+
+    // api.getClients().then((data) => {
+    //   this.$store.commit('updateClients',data)
+    // })
 
   }
 }).$mount('#app')

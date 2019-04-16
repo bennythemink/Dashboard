@@ -6,17 +6,19 @@
         </h1>
     </header>
     <section>
-        <form>
+        <form @submit.prevent="processForm">
             <div class="form_group">
                 <label>Client</label>
-                <input type="text" value="Samsung" class="form_control" disabled>
+                <!-- <input type="text" :value="project.client" class="form_control" disabled> -->
+                <input type="text" class="form_control" v-model="client">
             </div>
             <div class="form_group">
                 <label>Project Title</label>
-                <input type="text" value="Samsung Phase 4" class="form_control" disabled>
+                <input type="text" class="form_control" v-model="name">
             </div>
             <div class="form_group">
                 <label>Due Date</label>
+                <!-- <input type="date" :placeholder="project.dueDate" class="form_control" required> -->
                 <input type="date" placeholder="dd/mm/yyyy" class="form_control" required>
             </div>
             <div class="form_group">
@@ -108,9 +110,36 @@
 </template>
 
 <script>
-export default {
+import { API } from '../classes/API.js';
+import store from '../store';
 
+export default {
+    props: { 
+        project: {
+            type: Object,
+            required: false
+        }
+    },
+    data: {
+        client: '',
+        name: ''
+    },
+    methods: {
+        processForm: function() {
+            const newProject = {
+
+            };
+
+            api.createProject(newProject).then((data) => {
+                this.$store.addProject(data)
+            })
+        }
+    },
+    created() {
+        // console.log('project = '+this.project.client);
+    }
 }
+
 </script>
 
 <style>

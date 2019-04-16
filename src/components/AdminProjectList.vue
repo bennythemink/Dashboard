@@ -6,9 +6,11 @@
         </h1>
         <div>
             <!-- <input type="text" class="form_control" placeholder="Search for project..." id="search-projects"> -->
-            <button type="submit" class="btn btn_primary">
-                <span class="btn_title">Add Project</span>
-            </button>
+            <router-link to="/admin/projects/add">
+                <button type="submit" class="btn btn_primary">
+                    <span class="btn_title">Add Project</span>
+                </button>
+            </router-link>
         </div>
     </header>
     <section>
@@ -38,7 +40,7 @@
                     <td>
                         <div class="btn_link with_icon">
                             <!-- <router-link to="/admin/projects/edit"> -->
-                            <router-link :to="{ name: 'editProject', props: { project: project } }">
+                            <router-link :to="{ name: 'editProject', params: { project: project } }">
                                 <span class="icon"><img src="../assets/svg/edit.svg"/></span>
                                 <span class="btn_title">Edit</span>
                             </router-link>

@@ -23,6 +23,11 @@ export class API {
         return instance.get().then(response => response.data);
     }
 
+    createProject(project) {
+        const instance = this.createAxiosInstance("projects");
+        instance.post(project).then(response => response.data);
+    }
+
     getStaffUtilisation() {
         const instance = this.createAxiosInstance("utilisations");
         return instance.get().then(response => response.data);
@@ -30,6 +35,11 @@ export class API {
 
     getInvoices() {
         const instance = this.createAxiosInstance("invoices");
+        return instance.get().then(response => response.data);
+    }
+
+    getClients() {
+        const instance = this.createAxiosInstance("clients");
         return instance.get().then(response => response.data);
     }
 }

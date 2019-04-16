@@ -10,15 +10,15 @@
 
 import Utils from '@/components/Utils.vue'
 import ProjectList from '@/components/ProjectList.vue'
-import Banner from '@/components/Banner.vue'
+// import Banner from '@/components/Banner.vue'
 
 
 export default {
   name: 'dashboard',
   components: {
     ProjectList,
-    Utils,
-    Banner
+    Utils
+    // Banner
   },
   data: () => {
       return {
